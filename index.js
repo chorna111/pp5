@@ -15,6 +15,19 @@ function save(event) {
       isActive: document.getElementById('isActive').checked
     };
     console.log(formData);
+    document.getElementById('inputName').value=null
+    document.getElementById('nip').value=null
+    document.getElementById('inputCity').value=null
+    document.getElementById('inputStreet').value=null
+    document.getElementById('inputHouseNumber').value=null
+    document.getElementById('inputApartNumber').value=null
+    document.getElementById('inputPostcode').value=null
+    document.getElementById('field').value=null
+    document.getElementById('isActive').checked=null
+    document.getElementById('comments').value=null
+
+    const formElements = document.querySelectorAll('form input, form select, form textarea');
+    formElements.forEach(element=>{element.disabled=false})
 }
 function  insertData(){
   document.getElementById('inputName').value="Corpo",
