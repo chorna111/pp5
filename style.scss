@@ -1,4 +1,23 @@
+.custom-field{
+    background-color: pink !important;
+    color:black !important;
+   
+
+
+}
+
+.btn.btn-outline-info {
+    color: pink !important;
+    border-color: pink !important; 
+}
+.btn.btn-outline-info:hover, 
+.btn.btn-outline-info:focus {
+  background-color: pink !important;
+  color: white !important; 
+}
 $body-bg: #000;
 $body-color: #fff;
+
+
 @import 'node_modules/bootstrap/scss/bootstrap';
 
