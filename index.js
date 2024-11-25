@@ -11,7 +11,7 @@ function showList() {
   ul.innerHTML = "Lista klientów:";
   
   customersList.forEach((customer) => {
-    ul.innerHTML += `<li>${customer.name} 
+    ul.innerHTML += `<li class="list-group-item">${customer.name} 
         <button class="btn btn-primary" onclick="showCustomer(${customer.id})">Edytuj</button>
       </li>`;
   });

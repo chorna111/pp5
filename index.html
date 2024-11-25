@@ -9,10 +9,12 @@
   </head>
   <body>
     <div id="customer-list">
-      <ul id="customer-list-data">Lista klientów
+      <ul id="customer-list-data" class="list-group">Lista klientów
         
       </ul>
-      <button type="button" class="btn btn-outline-info" onclick="showForm()" class="btn">Wyświetl formę</button>
+      
+      <button type="button" class="btn btn-outline-info" onclick="showForm();enableFormEl()" class="btn">Wyświetl formę</button>
+      
     </div>
    
     <div id="customer-form" style="display:none">
@@ -22,7 +24,7 @@
 
       
         <div class="row mb-3">
-          <label for="inputName" class="col-sm-2 col-form-label custom-field">Nazwa firmy</label>
+          <label for="inputName" class="col-sm-2 col-form-label">Nazwa firmy</label>
           <div class="col-sm-10">
           <input type="text"  id="inputName" class="form-control custom-field" required>
         </div>

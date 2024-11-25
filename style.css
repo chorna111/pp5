@@ -1,22 +1,29 @@
 @charset "UTF-8";
-.custom-field {
-  background-color: pink !important;
-  color: black !important;
-}
-
-customer-list-data {
-  font-size: large;
-}
-
-.btn.btn-outline-info {
+.btn.btn-outline-info,
+.btn.btn-primary {
   color: pink !important;
   border-color: pink !important;
+  background-color: #000 !important;
 }
 
 .btn.btn-outline-info:hover,
-.btn.btn-outline-info:focus {
+.btn.btn-outline-info:focus,
+.btn.btn-primary:hover,
+.btn.btn-primary:focus {
   background-color: pink !important;
   color: white !important;
+}
+
+input:disabled,
+select:disabled,
+textarea:disabled,
+button:disabled {
+  color: #000 !important;
+  background-color: white !important;
+}
+
+input:checked {
+  background-color: pink !important;
 }
 
 /*!
