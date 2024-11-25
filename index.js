@@ -1,3 +1,4 @@
+
 function showForm() {
   document.getElementById('customer-list').style.display = "none";
   document.getElementById('customer-form').style.display = "block";
@@ -33,29 +34,32 @@ function showCustomer(customerId) {
 function save(event) {
   event.preventDefault();
   const clientId=document.getElementById('customerId').value
+  const newCustomer=new Customer()
+  newCustomer.id=clientId ? parseInt(clientId): Math.floor(Math.random() * 10001)
+  newCustomer.name= document.getElementById('inputName').value,
+  newCustomer.nip=document.getElementById('nip').value,
+  newCustomer.city=document.getElementById('inputCity').value,
+  newCustomer.street= document.getElementById('inputStreet').value,
+  newCustomer.houseNumber=document.getElementById('inputHouseNumber').value,
+  newCustomer.apartmentNumber= document.getElementById('inputApartNumber').value,
+  newCustomer.postalCode=document.getElementById('inputPostcode').value,
+  newCustomer.comments= document.getElementById('comments').value,
+  newCustomer.field=document.getElementById('field').value,
+  newCustomer.isActive= document.getElementById('isActive').checked
   
-  const clientData = {
-    id: clientId ? parseInt(clientId): Math.floor(Math.random() * 10001),
-    name: document.getElementById('inputName').value,
-    nip: document.getElementById('nip').value,
-    city: document.getElementById('inputCity').value,
-    street: document.getElementById('inputStreet').value,
-    houseNumber: document.getElementById('inputHouseNumber').value,
-    apartmentNumber: document.getElementById('inputApartNumber').value,
-    postalCode: document.getElementById('inputPostcode').value,
-    comments: document.getElementById('comments').value,
-    field: document.getElementById('field').value,
-    isActive: document.getElementById('isActive').checked
-  };
   if(clientId){
     const index=customersList.findIndex(c=>c.id===parseInt(clientId))
-    customersList[index]=clientData
+    customersList[index]=newCustomer
   }else{
-    customersList.push(clientData)
+    customersList.push(newCustomer)
   }
   document.getElementById('customerId').value=""
+
   showList();
   addDataToForm(getEmptyCustomer()); 
+  console.log(newCustomer)
+
+ 
   return false;
 }
 function getCustomer() {
@@ -99,6 +103,8 @@ function addDataToForm(newCustomer) {
   document.getElementById('inputPostcode').value = newCustomer.postalCode;
   document.getElementById('field').value = newCustomer.field;
   document.getElementById('isActive').checked = newCustomer.isActive;
+
+  
 }
 
 function disableFormEl() {
