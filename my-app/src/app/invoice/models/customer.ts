@@ -1,5 +1,5 @@
 
-class Customer{
+export class Customer{
   constructor(){}
 
     id:number=0
@@ -14,16 +14,16 @@ class Customer{
     field:string=""
     isActive:boolean=true
     adress:string=""
-    
+
     getAdress(){
-      return `Miasto: ${this.city}, ul.${this.street} ${this.houseNumber}/${this.apartmentNumber}, ${this.postalCode}`
-    
-      
-      
+      this.adress=`Miasto: ${this.city}, ul.${this.street} ${this.houseNumber}/${this.apartmentNumber}, ${this.postalCode}`
+
+
+      return this.adress
 
     }
 
-    
+
 
 }
 class Supplier extends Customer{
@@ -31,8 +31,8 @@ class Supplier extends Customer{
     constructor(accountNumber:number){
       super()
       this.accountNumber=accountNumber
-      
-  
+
+
     }
     invoices=[]
 
