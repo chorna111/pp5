@@ -12,7 +12,7 @@ export class Customer{
     postalCode:string=""
     comments:string=""
     field:string=""
-    isActive:boolean=true
+    isActive:boolean=false
     adress:string=""
 
     getAdress(){

@@ -1,1 +1,6 @@
-<p>customer-list works!</p>
+<div *ngFor="let customer of customerList">
+  {{ customer.name }}
+</div>
+
+<app-customer-list-element *ngFor="let customer of customerList" [customer]="customer"></app-customer-list-element>
+<button (ngClick)="redirect()">Dodaj nowy</button>
