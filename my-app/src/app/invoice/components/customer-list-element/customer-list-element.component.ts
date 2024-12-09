@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input,EventEmitter, Output } from '@angular/core';
 import {Customer} from '../../models/customer'
+
 
 @Component({
   selector: 'app-customer-list-element',
@@ -10,7 +11,17 @@ import {Customer} from '../../models/customer'
 })
 export class CustomerListElementComponent {
   @Input()
-  customer: Customer=new Customer()
+  customer: Customer=new Customer();
+
+  @Output()
+  deleteCustomerEvent=new EventEmitter<Customer>()
+
+
+  deleteCustomer(){
+    console.log('Kasuje klienta ',this.customer.nip)
+    this.deleteCustomerEvent.emit(this.customer)
+  }
+
 
 
 }

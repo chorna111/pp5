@@ -14,12 +14,13 @@ export class Customer{
     field:string=""
     isActive:boolean=false
     adress:string=""
+    info:string=""
 
-    getAdress(){
-      this.adress=`Miasto: ${this.city}, ul.${this.street} ${this.houseNumber}/${this.apartmentNumber}, ${this.postalCode}`
+    getCustomerInfo(){
+      this.info=`Nazwa firmy: ${this.name}, Adres: ${this.city}, ul.${this.street} ${this.houseNumber}/${this.apartmentNumber}, ${this.postalCode} `
 
 
-      return this.adress
+      return this.info
 
     }
 
